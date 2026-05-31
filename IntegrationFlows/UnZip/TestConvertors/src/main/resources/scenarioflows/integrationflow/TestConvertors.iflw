@@ -1,0 +1,1091 @@
+<?xml version="1.0" encoding="UTF-8"?><bpmn2:definitions xmlns:bpmn2="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:ifl="http:///com.sap.ifl.model/Ifl.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="Definitions_1">
+    <bpmn2:collaboration id="Collaboration_1" name="Default Collaboration">
+        <bpmn2:extensionElements>
+            <ifl:property>
+                <key>namespaceMapping</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>httpSessionHandling</key>
+                <value>None</value>
+            </ifl:property>
+            <ifl:property>
+                <key>accessControlMaxAge</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>returnExceptionToSender</key>
+                <value>false</value>
+            </ifl:property>
+            <ifl:property>
+                <key>log</key>
+                <value>All events</value>
+            </ifl:property>
+            <ifl:property>
+                <key>corsEnabled</key>
+                <value>false</value>
+            </ifl:property>
+            <ifl:property>
+                <key>exposedHeaders</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>componentVersion</key>
+                <value>1.2</value>
+            </ifl:property>
+            <ifl:property>
+                <key>allowedHeaderList</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>ServerTrace</key>
+                <value>false</value>
+            </ifl:property>
+            <ifl:property>
+                <key>allowedOrigins</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>accessControlAllowCredentials</key>
+                <value>false</value>
+            </ifl:property>
+            <ifl:property>
+                <key>allowedHeaders</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>allowedMethods</key>
+                <value/>
+            </ifl:property>
+            <ifl:property>
+                <key>cmdVariantUri</key>
+                <value>ctype::IFlowVariant/cname::IFlowConfiguration/version::1.2.4</value>
+            </ifl:property>
+        </bpmn2:extensionElements>
+        <bpmn2:participant id="Participant_1" ifl:type="EndpointSender" name="Sender">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>enableBasicAuthentication</key>
+                    <value>false</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>ifl:type</key>
+                    <value>EndpointSender</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+        </bpmn2:participant>
+        <bpmn2:participant id="Participant_2" ifl:type="EndpointRecevier" name="Receiver">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>ifl:type</key>
+                    <value>EndpointRecevier</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+        </bpmn2:participant>
+        <bpmn2:participant id="Participant_Process_1" ifl:type="IntegrationProcess" name="Integration Process" processRef="Process_1">
+            <bpmn2:extensionElements/>
+        </bpmn2:participant>
+    </bpmn2:collaboration>
+    <bpmn2:process id="Process_1" name="Integration Process">
+        <bpmn2:extensionElements>
+            <ifl:property>
+                <key>transactionTimeout</key>
+                <value>30</value>
+            </ifl:property>
+            <ifl:property>
+                <key>componentVersion</key>
+                <value>1.2</value>
+            </ifl:property>
+            <ifl:property>
+                <key>cmdVariantUri</key>
+                <value>ctype::FlowElementVariant/cname::IntegrationProcess/version::1.2.1</value>
+            </ifl:property>
+            <ifl:property>
+                <key>transactionalHandling</key>
+                <value>Not Required</value>
+            </ifl:property>
+        </bpmn2:extensionElements>
+        <bpmn2:endEvent id="EndEvent_2" name="End">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.1</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::MessageEndEvent/version::1.1.0</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:incoming>SequenceFlow_13</bpmn2:incoming>
+            <bpmn2:incoming>SequenceFlow_9</bpmn2:incoming>
+            <bpmn2:incoming>SequenceFlow_661</bpmn2:incoming>
+            <bpmn2:incoming>SequenceFlow_4</bpmn2:incoming>
+            <bpmn2:messageEventDefinition/>
+        </bpmn2:endEvent>
+        <bpmn2:callActivity id="CallActivity_5" name="CSV Payload">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>bodyType</key>
+                    <value>constant</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>propertyTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>headerTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>wrapContent</key>
+                    <value>DivisionID,SSN,FirstName,MiddleName,LastName,Email,Address1,Address2,City,State,Zip,Phone,DOB,LocationCode,PositionCode,WorkState,LoginID,Password,Activate,TemplateCode,SkipSMSAlert,EMPLOYERNAME,EMPLOYERDBA,EMPLOYERADDRESS1,EMPLOYERADDRESS2,EMPLOYERCITY,EMPLOYERSTATE,EMPLOYERZIP,AREACODE,EMPLOYERPHONE,EmployerEmail,EMPLOYERFAX,EMPLOYERSIGNATURE,FEIN,CALeaveStartDate,CALaidOffDischargeDate,CAEmploymentStatusChangeDate,CAStatusChangedTo,EMPLOYERREGNUMBER,CTNCCICode,CTStartDate,CTLastDayWorked,CTReturnToWorkDate,CTYTDEarnings,CTLastWeekWage,CTLackOfWork,CTVoluntaryLeaving,CTDischargeOrSuspension,CTLeaveOfAbsence,CTOther,CTOtherReason,CTDismissalPayYes,CTDismissalPayNo,CTDismissalPayType,CTDismissalPayHrsOrDay,CTDismissalPayAmount,CTDismissalPayDatesCovered,GAOtherNames,GALastEmploymentFrom,GALastEmploymentTo,GALackOfWork,GAOther,GAOtherReason,GAPaymentType,GAAmount,GAPaymentPeriodFrom,GAPaymentPeriodTo,GAPaymentIssueDate,GARetirementAmount,GAContributionPercentage,GAEarningYes,GAEarningNo,GAEarnedAmount,GAAvgWeeklyWage,GADOLACCOUNTNumber,EMPEAN,CONTACTPERSON,MISeparationReason,EMPIDNUMBER,NJWorkLocation,NJSeparationDate,NJPermanent,NJTemporary,NJExpectedRecallDate,EMPLOYERREGISTRATION,NYDateGiven,PAYROLL,PAYROLLCLOCKNUMBER,LOCATIONOFEMPCODE,EMPLOYERPAUCACCTNO,EMPLOYERCONTACTPERSON,EMPLOYERTITLE,PAReturnToWorkYes,PAReturnToWorkNo,PAExpectedRecallDate,EMPACCOUNTNUMBER,TNLastEmployedFrom,TNLastEmployedTo,TNOccupation,TNWorkLocation,TNLackOfWork,TNDischarge,TNQuit,TNOtherSeparationReason,TNPermanentLayoff,TNTemporaryLayoff,TNRecallDate,TNVacationPayAmount,TNVacationPayEndDate,TNLieuNoticeWage,TNSeverance,TNSeveranceAmount,TNSeverancePayFromDate,TNSeverancePayToDate,TNReleaseDate,IAACCOUNTNUMBER,EMPNAME,EMPTITLE,IADateOfSeparation,IALocationcode,IAVoluntaryQuit,IADischarge,IARefused,IALeft,COStartDate,COLastDayWorked,COYTDEarnings,COLastWeekWage,COQuit,COQuitReason,COLayoff,CODischarge,CODischargeReason,COOther,COOTHERREASON,MONTHLY,SEMIMONTHLY,WEEKLY,OTHER
+2431,538838393,Lisa,,Shute,jessica.lunddenn@elior-na.com,address1,,Fairfield,IA,52556,5073639290,,DEFAULT,OFF,IA,,,Y,OFF,,"Aladdin Food Management Services, LLC",,,,,,,,,,,,200179160, , ,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,200179160001,,,08/22/2025,,N,N,N,Y,,,,,,,,,,,,,,,
+2431,222583258,Zoreya,Eleas,King,jessica.lunddenn@elior-na.com,address1,address2,Albany,GA,31705,5073639290,,DEFAULT,OFF,GA,,,Y,OFF,,"Aladdin Food Management Services, LLC",,,,,,,,,,,,200179160, , ,,,,,,,,,,,,,,,,,,,,,,,01/02/2024,08/22/2025,Y,N,,,,,,,,,Y,N,0.00,0.00,3023193NF,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.6</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>activityType</key>
+                    <value>Enricher</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::Enricher/version::1.6.3</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:outgoing>SequenceFlow_7</bpmn2:outgoing>
+        </bpmn2:callActivity>
+        <bpmn2:callActivity id="CallActivity_658" name="JSON Payload">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>bodyType</key>
+                    <value>constant</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>propertyTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>headerTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>wrapContent</key>
+                    <value>{
+  "row": [
+    {
+      "DivisionID": "2431",
+      "SSN": "538838393",
+      "FirstName": "Lisa",
+      "MiddleName": "",
+      "LastName": "Shute",
+      "Email": "jessica.lunddenn@elior-na.com",
+      "Address1": "address1",
+      "Address2": "",
+      "City": "Fairfield",
+      "State": "IA",
+      "Zip": "52556",
+      "Phone": "5073639290",
+      "DOB": "",
+      "LocationCode": "DEFAULT",
+      "PositionCode": "OFF",
+      "WorkState": "IA",
+      "LoginID": "",
+      "Password": "",
+      "Activate": "Y",
+      "TemplateCode": "OFF",
+      "SkipSMSAlert": "",
+      "EMPLOYERNAME": "Aladdin Food Management Services, LLC",
+      "EMPLOYERDBA": "",
+      "EMPLOYERADDRESS1": "",
+      "EMPLOYERADDRESS2": "",
+      "EMPLOYERCITY": "",
+      "EMPLOYERSTATE": "",
+      "EMPLOYERZIP": "",
+      "AREACODE": "",
+      "EMPLOYERPHONE": "",
+      "EmployerEmail": "",
+      "EMPLOYERFAX": "",
+      "EMPLOYERSIGNATURE": "",
+      "FEIN": "200179160",
+      "CALeaveStartDate": "",
+      "CALaidOffDischargeDate": "",
+      "CAEmploymentStatusChangeDate": "",
+      "CAStatusChangedTo": "",
+      "EMPLOYERREGNUMBER": "",
+      "CTNCCICode": "",
+      "CTStartDate": "",
+      "CTLastDayWorked": "",
+      "CTReturnToWorkDate": "",
+      "CTYTDEarnings": "",
+      "CTLastWeekWage": "",
+      "CTLackOfWork": "",
+      "CTVoluntaryLeaving": "",
+      "CTDischargeOrSuspension": "",
+      "CTLeaveOfAbsence": "",
+      "CTOther": "",
+      "CTOtherReason": "",
+      "CTDismissalPayYes": "",
+      "CTDismissalPayNo": "",
+      "CTDismissalPayType": "",
+      "CTDismissalPayHrsOrDay": "",
+      "CTDismissalPayAmount": "",
+      "CTDismissalPayDatesCovered": "",
+      "GAOtherNames": "",
+      "GALastEmploymentFrom": "",
+      "GALastEmploymentTo": "",
+      "GALackOfWork": "",
+      "GAOther": "",
+      "GAOtherReason": "",
+      "GAPaymentType": "",
+      "GAAmount": "",
+      "GAPaymentPeriodFrom": "",
+      "GAPaymentPeriodTo": "",
+      "GAPaymentIssueDate": "",
+      "GARetirementAmount": "",
+      "GAContributionPercentage": "",
+      "GAEarningYes": "",
+      "GAEarningNo": "",
+      "GAEarnedAmount": "",
+      "GAAvgWeeklyWage": "",
+      "GADOLACCOUNTNumber": "",
+      "EMPEAN": "",
+      "CONTACTPERSON": "",
+      "MISeparationReason": "",
+      "EMPIDNUMBER": "",
+      "NJWorkLocation": "",
+      "NJSeparationDate": "",
+      "NJPermanent": "",
+      "NJTemporary": "",
+      "NJExpectedRecallDate": "",
+      "EMPLOYERREGISTRATION": "",
+      "NYDateGiven": "",
+      "PAYROLL": "",
+      "PAYROLLCLOCKNUMBER": "",
+      "LOCATIONOFEMPCODE": "",
+      "EMPLOYERPAUCACCTNO": "",
+      "EMPLOYERCONTACTPERSON": "",
+      "EMPLOYERTITLE": "",
+      "PAReturnToWorkYes": "",
+      "PAReturnToWorkNo": "",
+      "PAExpectedRecallDate": "",
+      "EMPACCOUNTNUMBER": "",
+      "TNLastEmployedFrom": "",
+      "TNLastEmployedTo": "",
+      "TNOccupation": "",
+      "TNWorkLocation": "",
+      "TNLackOfWork": "",
+      "TNDischarge": "",
+      "TNQuit": "",
+      "TNOtherSeparationReason": "",
+      "TNPermanentLayoff": "",
+      "TNTemporaryLayoff": "",
+      "TNRecallDate": "",
+      "TNVacationPayAmount": "",
+      "TNVacationPayEndDate": "",
+      "TNLieuNoticeWage": "",
+      "TNSeverance": "",
+      "TNSeveranceAmount": "",
+      "TNSeverancePayFromDate": "",
+      "TNSeverancePayToDate": "",
+      "TNReleaseDate": "",
+      "IAACCOUNTNUMBER": "200179160001",
+      "EMPNAME": "",
+      "EMPTITLE": "",
+      "IADateOfSeparation": "08/22/2025",
+      "IALocationcode": "",
+      "IAVoluntaryQuit": "N",
+      "IADischarge": "N",
+      "IARefused": "N",
+      "IALeft": "Y",
+      "COStartDate": "",
+      "COLastDayWorked": "",
+      "COYTDEarnings": "",
+      "COLastWeekWage": "",
+      "COQuit": "",
+      "COQuitReason": "",
+      "COLayoff": "",
+      "CODischarge": "",
+      "CODischargeReason": "",
+      "COOther": "",
+      "COOTHERREASON": "",
+      "MONTHLY": "",
+      "SEMIMONTHLY": "",
+      "WEEKLY": "",
+      "OTHER": ""
+    },
+    {
+      "DivisionID": "2431",
+      "SSN": "222583258",
+      "FirstName": "Zoreya",
+      "MiddleName": "Eleas",
+      "LastName": "King",
+      "Email": "jessica.lunddenn@elior-na.com",
+      "Address1": "address1",
+      "Address2": "address2",
+      "City": "Albany",
+      "State": "GA",
+      "Zip": "31705",
+      "Phone": "5073639290",
+      "DOB": "",
+      "LocationCode": "DEFAULT",
+      "PositionCode": "OFF",
+      "WorkState": "GA",
+      "LoginID": "",
+      "Password": "",
+      "Activate": "Y",
+      "TemplateCode": "OFF",
+      "SkipSMSAlert": "",
+      "EMPLOYERNAME": "Aladdin Food Management Services, LLC",
+      "EMPLOYERDBA": "",
+      "EMPLOYERADDRESS1": "",
+      "EMPLOYERADDRESS2": "",
+      "EMPLOYERCITY": "",
+      "EMPLOYERSTATE": "",
+      "EMPLOYERZIP": "",
+      "AREACODE": "",
+      "EMPLOYERPHONE": "",
+      "EmployerEmail": "",
+      "EMPLOYERFAX": "",
+      "EMPLOYERSIGNATURE": "",
+      "FEIN": "200179160",
+      "CALeaveStartDate": "",
+      "CALaidOffDischargeDate": "",
+      "CAEmploymentStatusChangeDate": "",
+      "CAStatusChangedTo": "",
+      "EMPLOYERREGNUMBER": "",
+      "CTNCCICode": "",
+      "CTStartDate": "",
+      "CTLastDayWorked": "",
+      "CTReturnToWorkDate": "",
+      "CTYTDEarnings": "",
+      "CTLastWeekWage": "",
+      "CTLackOfWork": "",
+      "CTVoluntaryLeaving": "",
+      "CTDischargeOrSuspension": "",
+      "CTLeaveOfAbsence": "",
+      "CTOther": "",
+      "CTOtherReason": "",
+      "CTDismissalPayYes": "",
+      "CTDismissalPayNo": "",
+      "CTDismissalPayType": "",
+      "CTDismissalPayHrsOrDay": "",
+      "CTDismissalPayAmount": "",
+      "CTDismissalPayDatesCovered": "",
+      "GAOtherNames": "",
+      "GALastEmploymentFrom": "01/02/2024",
+      "GALastEmploymentTo": "08/22/2025",
+      "GALackOfWork": "Y",
+      "GAOther": "N",
+      "GAOtherReason": "",
+      "GAPaymentType": "",
+      "GAAmount": "",
+      "GAPaymentPeriodFrom": "",
+      "GAPaymentPeriodTo": "",
+      "GAPaymentIssueDate": "",
+      "GARetirementAmount": "",
+      "GAContributionPercentage": "",
+      "GAEarningYes": "Y",
+      "GAEarningNo": "N",
+      "GAEarnedAmount": "0.00",
+      "GAAvgWeeklyWage": "0.00",
+      "GADOLACCOUNTNumber": "3023193NF",
+      "EMPEAN": "",
+      "CONTACTPERSON": "",
+      "MISeparationReason": "",
+      "EMPIDNUMBER": "",
+      "NJWorkLocation": "",
+      "NJSeparationDate": "",
+      "NJPermanent": "",
+      "NJTemporary": "",
+      "NJExpectedRecallDate": "",
+      "EMPLOYERREGISTRATION": "",
+      "NYDateGiven": "",
+      "PAYROLL": "",
+      "PAYROLLCLOCKNUMBER": "",
+      "LOCATIONOFEMPCODE": "",
+      "EMPLOYERPAUCACCTNO": "",
+      "EMPLOYERCONTACTPERSON": "",
+      "EMPLOYERTITLE": "",
+      "PAReturnToWorkYes": "",
+      "PAReturnToWorkNo": "",
+      "PAExpectedRecallDate": "",
+      "EMPACCOUNTNUMBER": "",
+      "TNLastEmployedFrom": "",
+      "TNLastEmployedTo": "",
+      "TNOccupation": "",
+      "TNWorkLocation": "",
+      "TNLackOfWork": "",
+      "TNDischarge": "",
+      "TNQuit": "",
+      "TNOtherSeparationReason": "",
+      "TNPermanentLayoff": "",
+      "TNTemporaryLayoff": "",
+      "TNRecallDate": "",
+      "TNVacationPayAmount": "",
+      "TNVacationPayEndDate": "",
+      "TNLieuNoticeWage": "",
+      "TNSeverance": "",
+      "TNSeveranceAmount": "",
+      "TNSeverancePayFromDate": "",
+      "TNSeverancePayToDate": "",
+      "TNReleaseDate": "",
+      "IAACCOUNTNUMBER": "",
+      "EMPNAME": "",
+      "EMPTITLE": "",
+      "IADateOfSeparation": "",
+      "IALocationcode": "",
+      "IAVoluntaryQuit": "",
+      "IADischarge": "",
+      "IARefused": "",
+      "IALeft": "",
+      "COStartDate": "",
+      "COLastDayWorked": "",
+      "COYTDEarnings": "",
+      "COLastWeekWage": "",
+      "COQuit": "",
+      "COQuitReason": "",
+      "COLayoff": "",
+      "CODischarge": "",
+      "CODischargeReason": "",
+      "COOther": "",
+      "COOTHERREASON": "",
+      "MONTHLY": "",
+      "SEMIMONTHLY": "",
+      "WEEKLY": "",
+      "OTHER": ""
+    }
+  ]
+}</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.6</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>activityType</key>
+                    <value>Enricher</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::Enricher/version::1.6.3</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:outgoing>SequenceFlow_660</bpmn2:outgoing>
+        </bpmn2:callActivity>
+        <bpmn2:callActivity id="CallActivity_1" name="XML Payload">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>bodyType</key>
+                    <value>constant</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>propertyTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>headerTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>wrapContent</key>
+                    <value>&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;root&gt;
+  &lt;xs:row xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;DivisionID&gt;2431&lt;/DivisionID&gt;
+    &lt;SSN&gt;538838393&lt;/SSN&gt;
+    &lt;FirstName&gt;Lisa&lt;/FirstName&gt;
+    &lt;MiddleName&gt;&lt;/MiddleName&gt;
+    &lt;LastName&gt;Shute&lt;/LastName&gt;
+    &lt;Email&gt;jessica.lunddenn@elior-na.com&lt;/Email&gt;
+    &lt;Address1&gt;address1&lt;/Address1&gt;
+    &lt;Address2&gt;&lt;/Address2&gt;
+    &lt;City&gt;Fairfield&lt;/City&gt;
+    &lt;State&gt;IA&lt;/State&gt;
+    &lt;Zip&gt;52556&lt;/Zip&gt;
+    &lt;Phone&gt;5073639290&lt;/Phone&gt;
+    &lt;DOB&gt;&lt;/DOB&gt;
+    &lt;LocationCode&gt;DEFAULT&lt;/LocationCode&gt;
+    &lt;PositionCode&gt;OFF&lt;/PositionCode&gt;
+    &lt;WorkState&gt;IA&lt;/WorkState&gt;
+    &lt;LoginID&gt;&lt;/LoginID&gt;
+    &lt;Password&gt;&lt;/Password&gt;
+    &lt;Activate&gt;Y&lt;/Activate&gt;
+    &lt;TemplateCode&gt;OFF&lt;/TemplateCode&gt;
+    &lt;SkipSMSAlert&gt;&lt;/SkipSMSAlert&gt;
+    &lt;EMPLOYERNAME&gt;Aladdin Food Management Services, LLC&lt;/EMPLOYERNAME&gt;
+    &lt;EMPLOYERDBA&gt;&lt;/EMPLOYERDBA&gt;
+    &lt;EMPLOYERADDRESS1&gt;&lt;/EMPLOYERADDRESS1&gt;
+    &lt;EMPLOYERADDRESS2&gt;&lt;/EMPLOYERADDRESS2&gt;
+    &lt;EMPLOYERCITY&gt;&lt;/EMPLOYERCITY&gt;
+    &lt;EMPLOYERSTATE&gt;&lt;/EMPLOYERSTATE&gt;
+    &lt;EMPLOYERZIP&gt;&lt;/EMPLOYERZIP&gt;
+    &lt;AREACODE&gt;&lt;/AREACODE&gt;
+    &lt;EMPLOYERPHONE&gt;&lt;/EMPLOYERPHONE&gt;
+    &lt;EmployerEmail&gt;&lt;/EmployerEmail&gt;
+    &lt;EMPLOYERFAX&gt;&lt;/EMPLOYERFAX&gt;
+    &lt;EMPLOYERSIGNATURE&gt;&lt;/EMPLOYERSIGNATURE&gt;
+    &lt;FEIN&gt;200179160&lt;/FEIN&gt;
+    &lt;CALeaveStartDate&gt;&lt;/CALeaveStartDate&gt;
+    &lt;CALaidOffDischargeDate&gt;&lt;/CALaidOffDischargeDate&gt;
+    &lt;CAEmploymentStatusChangeDate&gt;&lt;/CAEmploymentStatusChangeDate&gt;
+    &lt;CAStatusChangedTo&gt;&lt;/CAStatusChangedTo&gt;
+    &lt;EMPLOYERREGNUMBER&gt;&lt;/EMPLOYERREGNUMBER&gt;
+    &lt;CTNCCICode&gt;&lt;/CTNCCICode&gt;
+    &lt;CTStartDate&gt;&lt;/CTStartDate&gt;
+    &lt;CTLastDayWorked&gt;&lt;/CTLastDayWorked&gt;
+    &lt;CTReturnToWorkDate&gt;&lt;/CTReturnToWorkDate&gt;
+    &lt;CTYTDEarnings&gt;&lt;/CTYTDEarnings&gt;
+    &lt;CTLastWeekWage&gt;&lt;/CTLastWeekWage&gt;
+    &lt;CTLackOfWork&gt;&lt;/CTLackOfWork&gt;
+    &lt;CTVoluntaryLeaving&gt;&lt;/CTVoluntaryLeaving&gt;
+    &lt;CTDischargeOrSuspension&gt;&lt;/CTDischargeOrSuspension&gt;
+    &lt;CTLeaveOfAbsence&gt;&lt;/CTLeaveOfAbsence&gt;
+    &lt;CTOther&gt;&lt;/CTOther&gt;
+    &lt;CTOtherReason&gt;&lt;/CTOtherReason&gt;
+    &lt;CTDismissalPayYes&gt;&lt;/CTDismissalPayYes&gt;
+    &lt;CTDismissalPayNo&gt;&lt;/CTDismissalPayNo&gt;
+    &lt;CTDismissalPayType&gt;&lt;/CTDismissalPayType&gt;
+    &lt;CTDismissalPayHrsOrDay&gt;&lt;/CTDismissalPayHrsOrDay&gt;
+    &lt;CTDismissalPayAmount&gt;&lt;/CTDismissalPayAmount&gt;
+    &lt;CTDismissalPayDatesCovered&gt;&lt;/CTDismissalPayDatesCovered&gt;
+    &lt;GAOtherNames&gt;&lt;/GAOtherNames&gt;
+    &lt;GALastEmploymentFrom&gt;&lt;/GALastEmploymentFrom&gt;
+    &lt;GALastEmploymentTo&gt;&lt;/GALastEmploymentTo&gt;
+    &lt;GALackOfWork&gt;&lt;/GALackOfWork&gt;
+    &lt;GAOther&gt;&lt;/GAOther&gt;
+    &lt;GAOtherReason&gt;&lt;/GAOtherReason&gt;
+    &lt;GAPaymentType&gt;&lt;/GAPaymentType&gt;
+    &lt;GAAmount&gt;&lt;/GAAmount&gt;
+    &lt;GAPaymentPeriodFrom&gt;&lt;/GAPaymentPeriodFrom&gt;
+    &lt;GAPaymentPeriodTo&gt;&lt;/GAPaymentPeriodTo&gt;
+    &lt;GAPaymentIssueDate&gt;&lt;/GAPaymentIssueDate&gt;
+    &lt;GARetirementAmount&gt;&lt;/GARetirementAmount&gt;
+    &lt;GAContributionPercentage&gt;&lt;/GAContributionPercentage&gt;
+    &lt;GAEarningYes&gt;&lt;/GAEarningYes&gt;
+    &lt;GAEarningNo&gt;&lt;/GAEarningNo&gt;
+    &lt;GAEarnedAmount&gt;&lt;/GAEarnedAmount&gt;
+    &lt;GAAvgWeeklyWage&gt;&lt;/GAAvgWeeklyWage&gt;
+    &lt;GADOLACCOUNTNumber&gt;&lt;/GADOLACCOUNTNumber&gt;
+    &lt;EMPEAN&gt;&lt;/EMPEAN&gt;
+    &lt;CONTACTPERSON&gt;&lt;/CONTACTPERSON&gt;
+    &lt;MISeparationReason&gt;&lt;/MISeparationReason&gt;
+    &lt;EMPIDNUMBER&gt;&lt;/EMPIDNUMBER&gt;
+    &lt;NJWorkLocation&gt;&lt;/NJWorkLocation&gt;
+    &lt;NJSeparationDate&gt;&lt;/NJSeparationDate&gt;
+    &lt;NJPermanent&gt;&lt;/NJPermanent&gt;
+    &lt;NJTemporary&gt;&lt;/NJTemporary&gt;
+    &lt;NJExpectedRecallDate&gt;&lt;/NJExpectedRecallDate&gt;
+    &lt;EMPLOYERREGISTRATION&gt;&lt;/EMPLOYERREGISTRATION&gt;
+    &lt;NYDateGiven&gt;&lt;/NYDateGiven&gt;
+    &lt;PAYROLL&gt;&lt;/PAYROLL&gt;
+    &lt;PAYROLLCLOCKNUMBER&gt;&lt;/PAYROLLCLOCKNUMBER&gt;
+    &lt;LOCATIONOFEMPCODE&gt;&lt;/LOCATIONOFEMPCODE&gt;
+    &lt;EMPLOYERPAUCACCTNO&gt;&lt;/EMPLOYERPAUCACCTNO&gt;
+    &lt;EMPLOYERCONTACTPERSON&gt;&lt;/EMPLOYERCONTACTPERSON&gt;
+    &lt;EMPLOYERTITLE&gt;&lt;/EMPLOYERTITLE&gt;
+    &lt;PAReturnToWorkYes&gt;&lt;/PAReturnToWorkYes&gt;
+    &lt;PAReturnToWorkNo&gt;&lt;/PAReturnToWorkNo&gt;
+    &lt;PAExpectedRecallDate&gt;&lt;/PAExpectedRecallDate&gt;
+    &lt;EMPACCOUNTNUMBER&gt;&lt;/EMPACCOUNTNUMBER&gt;
+    &lt;TNLastEmployedFrom&gt;&lt;/TNLastEmployedFrom&gt;
+    &lt;TNLastEmployedTo&gt;&lt;/TNLastEmployedTo&gt;
+    &lt;TNOccupation&gt;&lt;/TNOccupation&gt;
+    &lt;TNWorkLocation&gt;&lt;/TNWorkLocation&gt;
+    &lt;TNLackOfWork&gt;&lt;/TNLackOfWork&gt;
+    &lt;TNDischarge&gt;&lt;/TNDischarge&gt;
+    &lt;TNQuit&gt;&lt;/TNQuit&gt;
+    &lt;TNOtherSeparationReason&gt;&lt;/TNOtherSeparationReason&gt;
+    &lt;TNPermanentLayoff&gt;&lt;/TNPermanentLayoff&gt;
+    &lt;TNTemporaryLayoff&gt;&lt;/TNTemporaryLayoff&gt;
+    &lt;TNRecallDate&gt;&lt;/TNRecallDate&gt;
+    &lt;TNVacationPayAmount&gt;&lt;/TNVacationPayAmount&gt;
+    &lt;TNVacationPayEndDate&gt;&lt;/TNVacationPayEndDate&gt;
+    &lt;TNLieuNoticeWage&gt;&lt;/TNLieuNoticeWage&gt;
+    &lt;TNSeverance&gt;&lt;/TNSeverance&gt;
+    &lt;TNSeveranceAmount&gt;&lt;/TNSeveranceAmount&gt;
+    &lt;TNSeverancePayFromDate&gt;&lt;/TNSeverancePayFromDate&gt;
+    &lt;TNSeverancePayToDate&gt;&lt;/TNSeverancePayToDate&gt;
+    &lt;TNReleaseDate&gt;&lt;/TNReleaseDate&gt;
+    &lt;IAACCOUNTNUMBER&gt;200179160001&lt;/IAACCOUNTNUMBER&gt;
+    &lt;EMPNAME&gt;&lt;/EMPNAME&gt;
+    &lt;EMPTITLE&gt;&lt;/EMPTITLE&gt;
+    &lt;IADateOfSeparation&gt;08/22/2025&lt;/IADateOfSeparation&gt;
+    &lt;IALocationcode&gt;&lt;/IALocationcode&gt;
+    &lt;IAVoluntaryQuit&gt;N&lt;/IAVoluntaryQuit&gt;
+    &lt;IADischarge&gt;N&lt;/IADischarge&gt;
+    &lt;IARefused&gt;N&lt;/IARefused&gt;
+    &lt;IALeft&gt;Y&lt;/IALeft&gt;
+    &lt;COStartDate&gt;&lt;/COStartDate&gt;
+    &lt;COLastDayWorked&gt;&lt;/COLastDayWorked&gt;
+    &lt;COYTDEarnings&gt;&lt;/COYTDEarnings&gt;
+    &lt;COLastWeekWage&gt;&lt;/COLastWeekWage&gt;
+    &lt;COQuit&gt;&lt;/COQuit&gt;
+    &lt;COQuitReason&gt;&lt;/COQuitReason&gt;
+    &lt;COLayoff&gt;&lt;/COLayoff&gt;
+    &lt;CODischarge&gt;&lt;/CODischarge&gt;
+    &lt;CODischargeReason&gt;&lt;/CODischargeReason&gt;
+    &lt;COOther&gt;&lt;/COOther&gt;
+    &lt;COOTHERREASON&gt;&lt;/COOTHERREASON&gt;
+    &lt;MONTHLY&gt;&lt;/MONTHLY&gt;
+    &lt;SEMIMONTHLY&gt;&lt;/SEMIMONTHLY&gt;
+    &lt;WEEKLY&gt;&lt;/WEEKLY&gt;
+    &lt;OTHER&gt;&lt;/OTHER&gt;
+  &lt;/xs:row&gt;
+  &lt;xs:row xmlns:xs="http://www.w3.org/2001/XMLSchema"&gt;
+    &lt;DivisionID&gt;2431&lt;/DivisionID&gt;
+    &lt;SSN&gt;222583258&lt;/SSN&gt;
+    &lt;FirstName&gt;Zoreya&lt;/FirstName&gt;
+    &lt;MiddleName&gt;Eleas&lt;/MiddleName&gt;
+    &lt;LastName&gt;King&lt;/LastName&gt;
+    &lt;Email&gt;jessica.lunddenn@elior-na.com&lt;/Email&gt;
+    &lt;Address1&gt;address1&lt;/Address1&gt;
+    &lt;Address2&gt;address2&lt;/Address2&gt;
+    &lt;City&gt;Albany&lt;/City&gt;
+    &lt;State&gt;GA&lt;/State&gt;
+    &lt;Zip&gt;31705&lt;/Zip&gt;
+    &lt;Phone&gt;5073639290&lt;/Phone&gt;
+    &lt;DOB&gt;&lt;/DOB&gt;
+    &lt;LocationCode&gt;DEFAULT&lt;/LocationCode&gt;
+    &lt;PositionCode&gt;OFF&lt;/PositionCode&gt;
+    &lt;WorkState&gt;GA&lt;/WorkState&gt;
+    &lt;LoginID&gt;&lt;/LoginID&gt;
+    &lt;Password&gt;&lt;/Password&gt;
+    &lt;Activate&gt;Y&lt;/Activate&gt;
+    &lt;TemplateCode&gt;OFF&lt;/TemplateCode&gt;
+    &lt;SkipSMSAlert&gt;&lt;/SkipSMSAlert&gt;
+    &lt;EMPLOYERNAME&gt;Aladdin Food Management Services, LLC&lt;/EMPLOYERNAME&gt;
+    &lt;EMPLOYERDBA&gt;&lt;/EMPLOYERDBA&gt;
+    &lt;EMPLOYERADDRESS1&gt;&lt;/EMPLOYERADDRESS1&gt;
+    &lt;EMPLOYERADDRESS2&gt;&lt;/EMPLOYERADDRESS2&gt;
+    &lt;EMPLOYERCITY&gt;&lt;/EMPLOYERCITY&gt;
+    &lt;EMPLOYERSTATE&gt;&lt;/EMPLOYERSTATE&gt;
+    &lt;EMPLOYERZIP&gt;&lt;/EMPLOYERZIP&gt;
+    &lt;AREACODE&gt;&lt;/AREACODE&gt;
+    &lt;EMPLOYERPHONE&gt;&lt;/EMPLOYERPHONE&gt;
+    &lt;EmployerEmail&gt;&lt;/EmployerEmail&gt;
+    &lt;EMPLOYERFAX&gt;&lt;/EMPLOYERFAX&gt;
+    &lt;EMPLOYERSIGNATURE&gt;&lt;/EMPLOYERSIGNATURE&gt;
+    &lt;FEIN&gt;200179160&lt;/FEIN&gt;
+    &lt;CALeaveStartDate&gt;&lt;/CALeaveStartDate&gt;
+    &lt;CALaidOffDischargeDate&gt;&lt;/CALaidOffDischargeDate&gt;
+    &lt;CAEmploymentStatusChangeDate&gt;&lt;/CAEmploymentStatusChangeDate&gt;
+    &lt;CAStatusChangedTo&gt;&lt;/CAStatusChangedTo&gt;
+    &lt;EMPLOYERREGNUMBER&gt;&lt;/EMPLOYERREGNUMBER&gt;
+    &lt;CTNCCICode&gt;&lt;/CTNCCICode&gt;
+    &lt;CTStartDate&gt;&lt;/CTStartDate&gt;
+    &lt;CTLastDayWorked&gt;&lt;/CTLastDayWorked&gt;
+    &lt;CTReturnToWorkDate&gt;&lt;/CTReturnToWorkDate&gt;
+    &lt;CTYTDEarnings&gt;&lt;/CTYTDEarnings&gt;
+    &lt;CTLastWeekWage&gt;&lt;/CTLastWeekWage&gt;
+    &lt;CTLackOfWork&gt;&lt;/CTLackOfWork&gt;
+    &lt;CTVoluntaryLeaving&gt;&lt;/CTVoluntaryLeaving&gt;
+    &lt;CTDischargeOrSuspension&gt;&lt;/CTDischargeOrSuspension&gt;
+    &lt;CTLeaveOfAbsence&gt;&lt;/CTLeaveOfAbsence&gt;
+    &lt;CTOther&gt;&lt;/CTOther&gt;
+    &lt;CTOtherReason&gt;&lt;/CTOtherReason&gt;
+    &lt;CTDismissalPayYes&gt;&lt;/CTDismissalPayYes&gt;
+    &lt;CTDismissalPayNo&gt;&lt;/CTDismissalPayNo&gt;
+    &lt;CTDismissalPayType&gt;&lt;/CTDismissalPayType&gt;
+    &lt;CTDismissalPayHrsOrDay&gt;&lt;/CTDismissalPayHrsOrDay&gt;
+    &lt;CTDismissalPayAmount&gt;&lt;/CTDismissalPayAmount&gt;
+    &lt;CTDismissalPayDatesCovered&gt;&lt;/CTDismissalPayDatesCovered&gt;
+    &lt;GAOtherNames&gt;&lt;/GAOtherNames&gt;
+    &lt;GALastEmploymentFrom&gt;01/02/2024&lt;/GALastEmploymentFrom&gt;
+    &lt;GALastEmploymentTo&gt;08/22/2025&lt;/GALastEmploymentTo&gt;
+    &lt;GALackOfWork&gt;Y&lt;/GALackOfWork&gt;
+    &lt;GAOther&gt;N&lt;/GAOther&gt;
+    &lt;GAOtherReason&gt;&lt;/GAOtherReason&gt;
+    &lt;GAPaymentType&gt;&lt;/GAPaymentType&gt;
+    &lt;GAAmount&gt;&lt;/GAAmount&gt;
+    &lt;GAPaymentPeriodFrom&gt;&lt;/GAPaymentPeriodFrom&gt;
+    &lt;GAPaymentPeriodTo&gt;&lt;/GAPaymentPeriodTo&gt;
+    &lt;GAPaymentIssueDate&gt;&lt;/GAPaymentIssueDate&gt;
+    &lt;GARetirementAmount&gt;&lt;/GARetirementAmount&gt;
+    &lt;GAContributionPercentage&gt;&lt;/GAContributionPercentage&gt;
+    &lt;GAEarningYes&gt;Y&lt;/GAEarningYes&gt;
+    &lt;GAEarningNo&gt;N&lt;/GAEarningNo&gt;
+    &lt;GAEarnedAmount&gt;0.00&lt;/GAEarnedAmount&gt;
+    &lt;GAAvgWeeklyWage&gt;0.00&lt;/GAAvgWeeklyWage&gt;
+    &lt;GADOLACCOUNTNumber&gt;3023193NF&lt;/GADOLACCOUNTNumber&gt;
+    &lt;EMPEAN&gt;&lt;/EMPEAN&gt;
+    &lt;CONTACTPERSON&gt;&lt;/CONTACTPERSON&gt;
+    &lt;MISeparationReason&gt;&lt;/MISeparationReason&gt;
+    &lt;EMPIDNUMBER&gt;&lt;/EMPIDNUMBER&gt;
+    &lt;NJWorkLocation&gt;&lt;/NJWorkLocation&gt;
+    &lt;NJSeparationDate&gt;&lt;/NJSeparationDate&gt;
+    &lt;NJPermanent&gt;&lt;/NJPermanent&gt;
+    &lt;NJTemporary&gt;&lt;/NJTemporary&gt;
+    &lt;NJExpectedRecallDate&gt;&lt;/NJExpectedRecallDate&gt;
+    &lt;EMPLOYERREGISTRATION&gt;&lt;/EMPLOYERREGISTRATION&gt;
+    &lt;NYDateGiven&gt;&lt;/NYDateGiven&gt;
+    &lt;PAYROLL&gt;&lt;/PAYROLL&gt;
+    &lt;PAYROLLCLOCKNUMBER&gt;&lt;/PAYROLLCLOCKNUMBER&gt;
+    &lt;LOCATIONOFEMPCODE&gt;&lt;/LOCATIONOFEMPCODE&gt;
+    &lt;EMPLOYERPAUCACCTNO&gt;&lt;/EMPLOYERPAUCACCTNO&gt;
+    &lt;EMPLOYERCONTACTPERSON&gt;&lt;/EMPLOYERCONTACTPERSON&gt;
+    &lt;EMPLOYERTITLE&gt;&lt;/EMPLOYERTITLE&gt;
+    &lt;PAReturnToWorkYes&gt;&lt;/PAReturnToWorkYes&gt;
+    &lt;PAReturnToWorkNo&gt;&lt;/PAReturnToWorkNo&gt;
+    &lt;PAExpectedRecallDate&gt;&lt;/PAExpectedRecallDate&gt;
+    &lt;EMPACCOUNTNUMBER&gt;&lt;/EMPACCOUNTNUMBER&gt;
+    &lt;TNLastEmployedFrom&gt;&lt;/TNLastEmployedFrom&gt;
+    &lt;TNLastEmployedTo&gt;&lt;/TNLastEmployedTo&gt;
+    &lt;TNOccupation&gt;&lt;/TNOccupation&gt;
+    &lt;TNWorkLocation&gt;&lt;/TNWorkLocation&gt;
+    &lt;TNLackOfWork&gt;&lt;/TNLackOfWork&gt;
+    &lt;TNDischarge&gt;&lt;/TNDischarge&gt;
+    &lt;TNQuit&gt;&lt;/TNQuit&gt;
+    &lt;TNOtherSeparationReason&gt;&lt;/TNOtherSeparationReason&gt;
+    &lt;TNPermanentLayoff&gt;&lt;/TNPermanentLayoff&gt;
+    &lt;TNTemporaryLayoff&gt;&lt;/TNTemporaryLayoff&gt;
+    &lt;TNRecallDate&gt;&lt;/TNRecallDate&gt;
+    &lt;TNVacationPayAmount&gt;&lt;/TNVacationPayAmount&gt;
+    &lt;TNVacationPayEndDate&gt;&lt;/TNVacationPayEndDate&gt;
+    &lt;TNLieuNoticeWage&gt;&lt;/TNLieuNoticeWage&gt;
+    &lt;TNSeverance&gt;&lt;/TNSeverance&gt;
+    &lt;TNSeveranceAmount&gt;&lt;/TNSeveranceAmount&gt;
+    &lt;TNSeverancePayFromDate&gt;&lt;/TNSeverancePayFromDate&gt;
+    &lt;TNSeverancePayToDate&gt;&lt;/TNSeverancePayToDate&gt;
+    &lt;TNReleaseDate&gt;&lt;/TNReleaseDate&gt;
+    &lt;IAACCOUNTNUMBER&gt;&lt;/IAACCOUNTNUMBER&gt;
+    &lt;EMPNAME&gt;&lt;/EMPNAME&gt;
+    &lt;EMPTITLE&gt;&lt;/EMPTITLE&gt;
+    &lt;IADateOfSeparation&gt;&lt;/IADateOfSeparation&gt;
+    &lt;IALocationcode&gt;&lt;/IALocationcode&gt;
+    &lt;IAVoluntaryQuit&gt;&lt;/IAVoluntaryQuit&gt;
+    &lt;IADischarge&gt;&lt;/IADischarge&gt;
+    &lt;IARefused&gt;&lt;/IARefused&gt;
+    &lt;IALeft&gt;&lt;/IALeft&gt;
+    &lt;COStartDate&gt;&lt;/COStartDate&gt;
+    &lt;COLastDayWorked&gt;&lt;/COLastDayWorked&gt;
+    &lt;COYTDEarnings&gt;&lt;/COYTDEarnings&gt;
+    &lt;COLastWeekWage&gt;&lt;/COLastWeekWage&gt;
+    &lt;COQuit&gt;&lt;/COQuit&gt;
+    &lt;COQuitReason&gt;&lt;/COQuitReason&gt;
+    &lt;COLayoff&gt;&lt;/COLayoff&gt;
+    &lt;CODischarge&gt;&lt;/CODischarge&gt;
+    &lt;CODischargeReason&gt;&lt;/CODischargeReason&gt;
+    &lt;COOther&gt;&lt;/COOther&gt;
+    &lt;COOTHERREASON&gt;&lt;/COOTHERREASON&gt;
+    &lt;MONTHLY&gt;&lt;/MONTHLY&gt;
+    &lt;SEMIMONTHLY&gt;&lt;/SEMIMONTHLY&gt;
+    &lt;WEEKLY&gt;&lt;/WEEKLY&gt;
+    &lt;OTHER&gt;&lt;/OTHER&gt;
+  &lt;/xs:row&gt;
+&lt;/root&gt;</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.6</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>activityType</key>
+                    <value>Enricher</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::Enricher/version::1.6.3</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:incoming>SequenceFlow_662</bpmn2:incoming>
+            <bpmn2:outgoing>SequenceFlow_0</bpmn2:outgoing>
+        </bpmn2:callActivity>
+        <bpmn2:callActivity id="CallActivity_657" name="JSON to XML Converter 1">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>additionalRootElementName</key>
+                    <value>root</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>jsonNamespaceMapping</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.1</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>activityType</key>
+                    <value>JsonToXmlConverter</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::JsonToXmlConverter/version::1.1.2</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>useNamespaces</key>
+                    <value>false</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>addXMLRootElement</key>
+                    <value>true</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>additionalRootElementNamespace</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>jsonNamespaceSeparator</key>
+                    <value>:</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:incoming>SequenceFlow_660</bpmn2:incoming>
+            <bpmn2:outgoing>SequenceFlow_661</bpmn2:outgoing>
+        </bpmn2:callActivity>
+        <bpmn2:startEvent id="StartEvent_4" name="Start Timer 1">
+            <bpmn2:outgoing>SequenceFlow_662</bpmn2:outgoing>
+            <bpmn2:timerEventDefinition id="TimerEventDefinition_155435">
+                <bpmn2:extensionElements>
+                    <ifl:property>
+                        <key>scheduleKey</key>
+                        <value>&lt;row&gt;&lt;cell&gt;dateType&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;timeType&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;dayValue&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;monthValue&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;yearValue&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;onWeekly&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;onMonthly&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;OnEveryMinute&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;fromInterval&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;toInterval&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;timeZone&lt;/cell&gt;&lt;cell&gt;( UTC 0:00 ) Greenwich Mean Time(Etc/GMT)&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;secondValue&lt;/cell&gt;&lt;cell&gt;0&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;minutesValue&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;hourValue&lt;/cell&gt;&lt;cell&gt;&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;triggerType&lt;/cell&gt;&lt;cell&gt;simple&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;noOfSchedules&lt;/cell&gt;&lt;cell&gt;1&lt;/cell&gt;&lt;/row&gt;&lt;row&gt;&lt;cell&gt;schedule1&lt;/cell&gt;&lt;cell&gt;fireNow=true&lt;/cell&gt;&lt;/row&gt;</value>
+                    </ifl:property>
+                    <ifl:property>
+                        <key>componentVersion</key>
+                        <value>1.4</value>
+                    </ifl:property>
+                    <ifl:property>
+                        <key>cmdVariantUri</key>
+                        <value>ctype::FlowstepVariant/cname::intermediatetimer/version::1.4.0</value>
+                    </ifl:property>
+                    <ifl:property>
+                        <key>activityType</key>
+                        <value>StartTimerEvent</value>
+                    </ifl:property>
+                </bpmn2:extensionElements>
+            </bpmn2:timerEventDefinition>
+        </bpmn2:startEvent>
+        <bpmn2:callActivity id="CallActivity_0" name="XML to CSV Converter 1">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>Field_Separator_in_CSV</key>
+                    <value>,</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>CSV_Header</key>
+                    <value>xml</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>XML_Schema_File_Path</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>Include_Attribute</key>
+                    <value>false</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>Include_Master</key>
+                    <value>true</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.2</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>activityType</key>
+                    <value>XmlToCsvConverter</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::XmlToCsvConverter/version::1.2.0</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>Master_XPath_Field_Location</key>
+                    <value>/root</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>XPath_Field_Location</key>
+                    <value>/root/row</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:outgoing>SequenceFlow_4</bpmn2:outgoing>
+        </bpmn2:callActivity>
+        <bpmn2:callActivity id="CallActivity_8" name="CSV to XML Converter 1">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>Field_Separator_in_CSV</key>
+                    <value>,</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>ignoreFirstLineAsHeader</key>
+                    <value>true</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>XML_Schema_File_Path</key>
+                    <value>/xsd/SampleXSD.xsd</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>headerMapping</key>
+                    <value>ignoreHeaders</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>Record_Identifier_in_CSV</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.4</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>activityType</key>
+                    <value>CsvToXmlConverter</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::CsvToXmlConverter/version::1.4.0</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>XPath_Field_Location</key>
+                    <value>/root/row</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:incoming>SequenceFlow_7</bpmn2:incoming>
+            <bpmn2:outgoing>SequenceFlow_9</bpmn2:outgoing>
+        </bpmn2:callActivity>
+        <bpmn2:callActivity id="CallActivity_11" name="XML to JSON Converter 1">
+            <bpmn2:extensionElements>
+                <ifl:property>
+                    <key>xmlJsonUseStreaming</key>
+                    <value>false</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>xmlJsonSuppressRootElement</key>
+                    <value>true</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>xmlJsonPathTable</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>jsonOutputEncoding</key>
+                    <value/>
+                </ifl:property>
+                <ifl:property>
+                    <key>jsonNamespaceMapping</key>
+                    <value>&lt;row&gt;&lt;cell&gt;http://www.w3.org/2001/XMLSchema&lt;/cell&gt;&lt;cell&gt;ns&lt;/cell&gt;&lt;/row&gt;</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>componentVersion</key>
+                    <value>1.0</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>xmlJsonConvertAllElements</key>
+                    <value>specific</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>activityType</key>
+                    <value>XmlToJsonConverter</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>cmdVariantUri</key>
+                    <value>ctype::FlowstepVariant/cname::XmlToJsonConverter/version::1.0.8</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>useNamespaces</key>
+                    <value>true</value>
+                </ifl:property>
+                <ifl:property>
+                    <key>jsonNamespaceSeparator</key>
+                    <value>.</value>
+                </ifl:property>
+            </bpmn2:extensionElements>
+            <bpmn2:incoming>SequenceFlow_0</bpmn2:incoming>
+            <bpmn2:outgoing>SequenceFlow_13</bpmn2:outgoing>
+        </bpmn2:callActivity>
+        <bpmn2:sequenceFlow id="SequenceFlow_7" sourceRef="CallActivity_5" targetRef="CallActivity_8"/>
+        <bpmn2:sequenceFlow id="SequenceFlow_660" sourceRef="CallActivity_658" targetRef="CallActivity_657"/>
+        <bpmn2:sequenceFlow id="SequenceFlow_0" sourceRef="CallActivity_1" targetRef="CallActivity_11"/>
+        <bpmn2:sequenceFlow id="SequenceFlow_661" sourceRef="CallActivity_657" targetRef="EndEvent_2"/>
+        <bpmn2:sequenceFlow id="SequenceFlow_662" sourceRef="StartEvent_4" targetRef="CallActivity_1"/>
+        <bpmn2:sequenceFlow id="SequenceFlow_4" sourceRef="CallActivity_0" targetRef="EndEvent_2"/>
+        <bpmn2:sequenceFlow id="SequenceFlow_9" sourceRef="CallActivity_8" targetRef="EndEvent_2"/>
+        <bpmn2:sequenceFlow id="SequenceFlow_13" sourceRef="CallActivity_11" targetRef="EndEvent_2"/>
+    </bpmn2:process>
+    <bpmndi:BPMNDiagram id="BPMNDiagram_1" name="Default Collaboration Diagram">
+        <bpmndi:BPMNPlane bpmnElement="Collaboration_1" id="BPMNPlane_1">
+            <bpmndi:BPMNShape bpmnElement="CallActivity_658" id="BPMNShape_CallActivity_658">
+                <dc:Bounds height="60.0" width="100.0" x="348.0" y="253.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="CallActivity_11" id="BPMNShape_CallActivity_11">
+                <dc:Bounds height="60.0" width="100.0" x="501.0" y="240.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="CallActivity_657" id="BPMNShape_CallActivity_657">
+                <dc:Bounds height="60.0" width="100.0" x="501.0" y="320.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="Participant_2" id="BPMNShape_Participant_2">
+                <dc:Bounds height="140.0" width="100.0" x="955.0" y="100.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="Participant_1" id="BPMNShape_Participant_1">
+                <dc:Bounds height="140.0" width="100.0" x="40.0" y="100.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="CallActivity_1" id="BPMNShape_CallActivity_1">
+                <dc:Bounds height="60.0" width="100.0" x="348.0" y="170.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="CallActivity_0" id="BPMNShape_CallActivity_0">
+                <dc:Bounds height="60.0" width="100.0" x="501.0" y="173.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="EndEvent_2" id="BPMNShape_EndEvent_2">
+                <dc:Bounds height="32.0" width="32.0" x="783.0" y="194.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="CallActivity_8" id="BPMNShape_CallActivity_8">
+                <dc:Bounds height="60.0" width="100.0" x="501.0" y="100.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="StartEvent_4" id="BPMNShape_StartEvent_4">
+                <dc:Bounds height="32.0" width="32.0" x="270.0" y="157.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="CallActivity_5" id="BPMNShape_CallActivity_5">
+                <dc:Bounds height="60.0" width="100.0" x="348.0" y="100.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNShape bpmnElement="Participant_Process_1" id="BPMNShape_Participant_Process_1">
+                <dc:Bounds height="350.0" width="667.0" x="232.0" y="50.0"/>
+            </bpmndi:BPMNShape>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_13" id="BPMNEdge_SequenceFlow_13" sourceElement="BPMNShape_CallActivity_11" targetElement="BPMNShape_EndEvent_2">
+                <di:waypoint x="551.0" xsi:type="dc:Point" y="270.0"/>
+                <di:waypoint x="690.0" xsi:type="dc:Point" y="270.0"/>
+                <di:waypoint x="690.0" xsi:type="dc:Point" y="210.0"/>
+                <di:waypoint x="799.0" xsi:type="dc:Point" y="210.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_9" id="BPMNEdge_SequenceFlow_9" sourceElement="BPMNShape_CallActivity_8" targetElement="BPMNShape_EndEvent_2">
+                <di:waypoint x="551.0" xsi:type="dc:Point" y="128.0"/>
+                <di:waypoint x="665.5" xsi:type="dc:Point" y="128.0"/>
+                <di:waypoint x="665.5" xsi:type="dc:Point" y="212.0"/>
+                <di:waypoint x="799.0" xsi:type="dc:Point" y="212.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_7" id="BPMNEdge_SequenceFlow_7" sourceElement="BPMNShape_CallActivity_5" targetElement="BPMNShape_CallActivity_8">
+                <di:waypoint x="398.0" xsi:type="dc:Point" y="130.0"/>
+                <di:waypoint x="551.0" xsi:type="dc:Point" y="130.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_661" id="BPMNEdge_SequenceFlow_661" sourceElement="BPMNShape_CallActivity_657" targetElement="BPMNShape_EndEvent_2">
+                <di:waypoint x="551.0" xsi:type="dc:Point" y="350.0"/>
+                <di:waypoint x="692.0" xsi:type="dc:Point" y="350.0"/>
+                <di:waypoint x="692.0" xsi:type="dc:Point" y="210.0"/>
+                <di:waypoint x="799.0" xsi:type="dc:Point" y="210.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_662" id="BPMNEdge_SequenceFlow_662" sourceElement="BPMNShape_StartEvent_4" targetElement="BPMNShape_CallActivity_1">
+                <di:waypoint x="286.0" xsi:type="dc:Point" y="173.0"/>
+                <di:waypoint x="325.25" xsi:type="dc:Point" y="173.0"/>
+                <di:waypoint x="325.25" xsi:type="dc:Point" y="200.0"/>
+                <di:waypoint x="398.0" xsi:type="dc:Point" y="200.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_4" id="BPMNEdge_SequenceFlow_4" sourceElement="BPMNShape_CallActivity_0" targetElement="BPMNShape_EndEvent_2">
+                <di:waypoint x="551.0" xsi:type="dc:Point" y="206.5"/>
+                <di:waypoint x="799.0" xsi:type="dc:Point" y="206.5"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_0" id="BPMNEdge_SequenceFlow_0" sourceElement="BPMNShape_CallActivity_1" targetElement="BPMNShape_CallActivity_11">
+                <di:waypoint x="398.0" xsi:type="dc:Point" y="200.0"/>
+                <di:waypoint x="474.5" xsi:type="dc:Point" y="200.0"/>
+                <di:waypoint x="474.5" xsi:type="dc:Point" y="267.0"/>
+                <di:waypoint x="545.0" xsi:type="dc:Point" y="267.0"/>
+            </bpmndi:BPMNEdge>
+            <bpmndi:BPMNEdge bpmnElement="SequenceFlow_660" id="BPMNEdge_SequenceFlow_660" sourceElement="BPMNShape_CallActivity_658" targetElement="BPMNShape_CallActivity_657">
+                <di:waypoint x="398.0" xsi:type="dc:Point" y="283.0"/>
+                <di:waypoint x="474.5" xsi:type="dc:Point" y="283.0"/>
+                <di:waypoint x="474.5" xsi:type="dc:Point" y="350.0"/>
+                <di:waypoint x="551.0" xsi:type="dc:Point" y="350.0"/>
+            </bpmndi:BPMNEdge>
+        </bpmndi:BPMNPlane>
+    </bpmndi:BPMNDiagram>
+</bpmn2:definitions>
