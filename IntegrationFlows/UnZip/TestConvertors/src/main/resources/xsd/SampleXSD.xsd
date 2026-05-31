@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="root">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="row">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="DivisionID" type="xs:unsignedShort" />
+              <xs:element name="SSN" type="xs:unsignedInt" />
+              <xs:element name="FirstName" type="xs:string" />
+              <xs:element name="MiddleName" type="xs:string" />
+              <xs:element name="LastName" type="xs:string" />
+              <xs:element name="Email" type="xs:string" />
+              <xs:element name="Address1" type="xs:string" />
+              <xs:element name="Address2" type="xs:string" />
+              <xs:element name="City" type="xs:string" />
+              <xs:element name="State" type="xs:string" />
+              <xs:element name="Zip" type="xs:unsignedShort" />
+              <xs:element name="Phone" type="xs:unsignedLong" />
+              <xs:element name="DOB" />
+              <xs:element name="LocationCode" type="xs:string" />
+              <xs:element name="PositionCode" type="xs:string" />
+              <xs:element name="WorkState" type="xs:string" />
+              <xs:element name="LoginID" />
+              <xs:element name="Password" />
+              <xs:element name="Activate" type="xs:string" />
+              <xs:element name="TemplateCode" type="xs:string" />
+              <xs:element name="SkipSMSAlert" />
+              <xs:element name="EMPLOYERNAME" type="xs:string" />
+              <xs:element name="EMPLOYERDBA" />
+              <xs:element name="EMPLOYERADDRESS1" />
+              <xs:element name="EMPLOYERADDRESS2" />
+              <xs:element name="EMPLOYERCITY" />
+              <xs:element name="EMPLOYERSTATE" />
+              <xs:element name="EMPLOYERZIP" />
+              <xs:element name="AREACODE" />
+              <xs:element name="EMPLOYERPHONE" />
+              <xs:element name="EmployerEmail" />
+              <xs:element name="EMPLOYERFAX" />
+              <xs:element name="EMPLOYERSIGNATURE" />
+              <xs:element name="FEIN" type="xs:unsignedInt" />
+              <xs:element name="CALeaveStartDate" />
+              <xs:element name="CALaidOffDischargeDate" />
+              <xs:element name="CAEmploymentStatusChangeDate" />
+              <xs:element name="CAStatusChangedTo" />
+              <xs:element name="EMPLOYERREGNUMBER" />
+              <xs:element name="CTNCCICode" />
+              <xs:element name="CTStartDate" />
+              <xs:element name="CTLastDayWorked" />
+              <xs:element name="CTReturnToWorkDate" />
+              <xs:element name="CTYTDEarnings" />
+              <xs:element name="CTLastWeekWage" />
+              <xs:element name="CTLackOfWork" />
+              <xs:element name="CTVoluntaryLeaving" />
+              <xs:element name="CTDischargeOrSuspension" />
+              <xs:element name="CTLeaveOfAbsence" />
+              <xs:element name="CTOther" />
+              <xs:element name="CTOtherReason" />
+              <xs:element name="CTDismissalPayYes" />
+              <xs:element name="CTDismissalPayNo" />
+              <xs:element name="CTDismissalPayType" />
+              <xs:element name="CTDismissalPayHrsOrDay" />
+              <xs:element name="CTDismissalPayAmount" />
+              <xs:element name="CTDismissalPayDatesCovered" />
+              <xs:element name="GAOtherNames" />
+              <xs:element name="GALastEmploymentFrom" type="xs:string" />
+              <xs:element name="GALastEmploymentTo" type="xs:string" />
+              <xs:element name="GALackOfWork" type="xs:string" />
+              <xs:element name="GAOther" type="xs:string" />
+              <xs:element name="GAOtherReason" />
+              <xs:element name="GAPaymentType" />
+              <xs:element name="GAAmount" />
+              <xs:element name="GAPaymentPeriodFrom" />
+              <xs:element name="GAPaymentPeriodTo" />
+              <xs:element name="GAPaymentIssueDate" />
+              <xs:element name="GARetirementAmount" />
+              <xs:element name="GAContributionPercentage" />
+              <xs:element name="GAEarningYes" type="xs:string" />
+              <xs:element name="GAEarningNo" type="xs:string" />
+              <xs:element name="GAEarnedAmount" type="xs:string" />
+              <xs:element name="GAAvgWeeklyWage" type="xs:string" />
+              <xs:element name="GADOLACCOUNTNumber" type="xs:string" />
+              <xs:element name="EMPEAN" />
+              <xs:element name="CONTACTPERSON" />
+              <xs:element name="MISeparationReason" />
+              <xs:element name="EMPIDNUMBER" />
+              <xs:element name="NJWorkLocation" />
+              <xs:element name="NJSeparationDate" />
+              <xs:element name="NJPermanent" />
+              <xs:element name="NJTemporary" />
+              <xs:element name="NJExpectedRecallDate" />
+              <xs:element name="EMPLOYERREGISTRATION" />
+              <xs:element name="NYDateGiven" />
+              <xs:element name="PAYROLL" />
+              <xs:element name="PAYROLLCLOCKNUMBER" />
+              <xs:element name="LOCATIONOFEMPCODE" />
+              <xs:element name="EMPLOYERPAUCACCTNO" />
+              <xs:element name="EMPLOYERCONTACTPERSON" />
+              <xs:element name="EMPLOYERTITLE" />
+              <xs:element name="PAReturnToWorkYes" />
+              <xs:element name="PAReturnToWorkNo" />
+              <xs:element name="PAExpectedRecallDate" />
+              <xs:element name="EMPACCOUNTNUMBER" />
+              <xs:element name="TNLastEmployedFrom" />
+              <xs:element name="TNLastEmployedTo" />
+              <xs:element name="TNOccupation" />
+              <xs:element name="TNWorkLocation" />
+              <xs:element name="TNLackOfWork" />
+              <xs:element name="TNDischarge" />
+              <xs:element name="TNQuit" />
+              <xs:element name="TNOtherSeparationReason" />
+              <xs:element name="TNPermanentLayoff" />
+              <xs:element name="TNTemporaryLayoff" />
+              <xs:element name="TNRecallDate" />
+              <xs:element name="TNVacationPayAmount" />
+              <xs:element name="TNVacationPayEndDate" />
+              <xs:element name="TNLieuNoticeWage" />
+              <xs:element name="TNSeverance" />
+              <xs:element name="TNSeveranceAmount" />
+              <xs:element name="TNSeverancePayFromDate" />
+              <xs:element name="TNSeverancePayToDate" />
+              <xs:element name="TNReleaseDate" />
+              <xs:element name="IAACCOUNTNUMBER" type="xs:string" />
+              <xs:element name="EMPNAME" />
+              <xs:element name="EMPTITLE" />
+              <xs:element name="IADateOfSeparation" type="xs:string" />
+              <xs:element name="IALocationcode" />
+              <xs:element name="IAVoluntaryQuit" type="xs:string" />
+              <xs:element name="IADischarge" type="xs:string" />
+              <xs:element name="IARefused" type="xs:string" />
+              <xs:element name="IALeft" type="xs:string" />
+              <xs:element name="COStartDate" />
+              <xs:element name="COLastDayWorked" />
+              <xs:element name="COYTDEarnings" />
+              <xs:element name="COLastWeekWage" />
+              <xs:element name="COQuit" />
+              <xs:element name="COQuitReason" />
+              <xs:element name="COLayoff" />
+              <xs:element name="CODischarge" />
+              <xs:element name="CODischargeReason" />
+              <xs:element name="COOther" />
+              <xs:element name="COOTHERREASON" />
+              <xs:element name="MONTHLY" />
+              <xs:element name="SEMIMONTHLY" />
+              <xs:element name="WEEKLY" />
+              <xs:element name="OTHER" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
